@@ -1,126 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rayan Khan — Showcase</title>
-  <meta name="description" content="Rayan Khan — Portfolio: C++, NLP, and web projects. Clean engineering and polished UI."/>
-  <meta name="author" content="Rayan Khan" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayan Khan — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Split layout: left (brand + CTA), right (carousel) -->
-  <div class="split" id="top">
-    <aside class="left" aria-labelledby="brand-title">
-      <div class="left-inner">
-        <div id="brand-title" class="brand">Rayan Khan</div>
+  <header class="hero">
+    <div class="overlay"></div>
+    <nav class="navbar">
+      <div class="logo">Rayan Khan</div>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-        <h1 class="big">
-          Engineering <span class="accent">Systems</span><br/>That Matter
-        </h1>
-
-        <p class="sub">C++ • Natural Language Processing • Performance-focused software</p>
-
-        <div class="left-cta">
-          <a href="#projects" class="btn">Explore Work</a>
-          <a href="#contact" class="btn btn-outline">Contact</a>
-        </div>
-
-        <div class="left-footer">📧 <a href="mailto:linkworkrayan@gmail.com">linkworkrayan@gmail.com</a></div>
+    <div class="hero-content">
+      <h1 class="fade-in">Hi, I’m <span>Rayan Khan</span></h1>
+      <p class="fade-in delay">Computer Science student passionate about building elegant, high-performance software.</p>
+      <div class="cta-buttons fade-in delay-2">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="resume.pdf" download class="btn secondary">Download Resume</a>
       </div>
-    </aside>
-
-    <main class="right" aria-label="Featured projects">
-      <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="Featured projects carousel">
-        <!-- TILE 1 (Machi Koro) -->
-        <article class="tile active" data-title="Machi Koro">
-          <picture>
-            <!-- replace with actual webp/jpg files -->
-            <source type="image/webp" srcset="showcase-1-800.webp 800w, showcase-1-1600.webp 1600w" sizes="(max-width:900px) 90vw, 60vw">
-            <img src="showcase-1-1600.jpg" alt="Machi Koro project screenshot" loading="eager" />
-          </picture>
-          <div class="tile-meta">
-            <h3>Machi Koro — C++</h3>
-            <p class="muted">Designing a modular card-game engine using Strategy & Observer patterns. Focus: testable logic, clear interfaces, and gameplay rules encoded as data.</p>
-            <p class="meta">C++ · OOP · Unit tests</p>
-            <p><a class="project-link" href="https://github.com/yourusername/machi-koro" target="_blank" rel="noopener">View on GitHub →</a></p>
-          </div>
-        </article>
-
-        <!-- TILE 2 (NLP Text Analyzer) -->
-        <article class="tile" data-title="NLP Text Analyzer">
-          <picture>
-            <source type="image/webp" srcset="showcase-2-800.webp 800w, showcase-2-1600.webp 1600w" sizes="(max-width:900px) 90vw, 60vw">
-            <img src="showcase-2-1600.jpg" alt="NLP Text Analyzer UI and results" loading="lazy" />
-          </picture>
-          <div class="tile-meta">
-            <h3>NLP Text Analyzer</h3>
-            <p class="muted">A lightweight toolkit for tokenization, n-grams, and sentiment scoring used in coursework. Built with clarity, well-commented, and suitable for extension into larger pipelines.</p>
-            <p class="meta">Python · NLP · Data pipelines</p>
-            <p><a class="project-link" href="https://github.com/yourusername/nlp-text-analyzer" target="_blank" rel="noopener">View on GitHub →</a></p>
-          </div>
-        </article>
-
-        <!-- TILE 3 (Circular Motion Simulator) -->
-        <article class="tile" data-title="Circular Motion Simulator">
-          <picture>
-            <source type="image/webp" srcset="showcase-3-800.webp 800w, showcase-3-1600.webp 1600w" sizes="(max-width:900px) 90vw, 60vw">
-            <img src="showcase-3-1600.jpg" alt="Circular Motion Simulator demonstration" loading="lazy" />
-          </picture>
-          <div class="tile-meta">
-            <h3>Circular Motion Simulator</h3>
-            <p class="muted">Interactive Canvas demo visualizing kinematics and forces. Allows parameter adjustments and real-time animation to aid understanding and teaching.</p>
-            <p class="meta">JavaScript · Canvas · Physics</p>
-            <p><a class="project-link" href="https://github.com/yourusername/circular-motion-sim" target="_blank" rel="noopener">View on GitHub →</a></p>
-          </div>
-        </article>
-      </div>
-
-      <div class="carousel-controls" aria-hidden="false">
-        <button id="prev" class="ctrl" aria-label="Previous project">‹</button>
-        <button id="next" class="ctrl" aria-label="Next project">›</button>
-      </div>
-    </main>
-  </div>
-
-  <!-- BELOW THE FOLD (projects list, about, contact) for SEO / detail -->
-  <section id="projects" class="below container">
-    <h2>All projects</h2>
-
-    <div class="projects-list">
-      <article class="project">
-        <h3>Machi Koro — C++</h3>
-        <p>Engineered modular gameplay logic, used design patterns, and produced unit tests for game rules and scoring. Clean code and documentation ready for collaboration.</p>
-      </article>
-
-      <article class="project">
-        <h3>NLP Text Analyzer</h3>
-        <p>Built Python tools for tokenization, sentiment detection, and similarity metrics. Outputs are reproducible and include test data and examples.</p>
-      </article>
-
-      <article class="project">
-        <h3>Circular Motion Simulator</h3>
-        <p>Interactive physics app using Canvas with sliders for parameters. Useful as a teaching tool and demo of numerical integration and animation loops.</p>
-      </article>
     </div>
-  </section>
+  </header>
 
-  <section id="about" class="below container">
-    <h2>About</h2>
-    <p>I’m a Computer Science student who builds reliable systems and neat user experiences. I enjoy clean architecture, testable code, and improving performance. Currently open to internships and junior engineering roles.</p>
-  </section>
+  <main>
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+      <div class="carousel">
+        <button class="arrow left">←</button>
+        <div class="projects-container">
+          <div class="project-card active">
+            <h3>Machi Koro — C++</h3>
+            <p>OOP card game implementing Strategy & Observer patterns with testable design.</p>
+            <span class="tag">C++ · OOP</span>
+          </div>
 
-  <section id="contact" class="below container">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:linkworkrayan@gmail.com">linkworkrayan@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
-  </section>
+          <div class="project-card">
+            <h3>NLP Text Analyzer</h3>
+            <p>Tokenization, n-grams, sentiment detection, and document similarity for coursework.</p>
+            <span class="tag">Python · NLP</span>
+          </div>
 
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Rayan Khan</small>
+          <div class="project-card">
+            <h3>Physics Visualizer</h3>
+            <p>Interactive HTML5 Canvas demo to visualize circular motion and forces.</p>
+            <span class="tag">JavaScript · Canvas</span>
+          </div>
+        </div>
+        <button class="arrow right">→</button>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section light">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span>C++</span><span>Python</span><span>JavaScript</span>
+        <span>React</span><span>OOP</span><span>NLP</span><span>Git</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I’m a passionate Computer Science student who loves to design elegant, efficient software. 
+      My projects focus on performance, readability, and real-world application.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section light">
+      <h2>Contact</h2>
+      <p>Want to connect? Reach me at:</p>
+      <a href="mailto:linkworkrayan@gmail.com" class="email">linkworkrayan@gmail.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Rayan Khan • Built with HTML, CSS & JS</p>
   </footer>
 
-  <script src="script.js" defer></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="script.js"></script>
 </body>
 </html>
