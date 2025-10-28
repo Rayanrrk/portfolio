@@ -10,28 +10,42 @@
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <!-- HERO with banner -->
-  <header class="hero hero--banner" role="banner" id="home">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__overlay" aria-hidden="true"></div>
+ <!-- HERO: full-bleed right image, large left headline -->
+<header class="hero-dramatic" id="home" role="banner">
+  <div class="hero-inner">
+    <nav class="site-nav">
+      <div class="logo">Rayan Khan</div>
+      <button class="menu-btn" aria-label="Open menu">☰</button>
+    </nav>
 
-    <div class="hero__inner">
-      <div class="hero__text">
-        <h1 class="hero-title">Hi — I’m <span class="accent">Rayan Rashid Khan</span></h1>
-        <p class="hero-sub">Computer Science student • C++ & NLP • I build dependable, elegant software.</p>
-        <div class="hero-ctas">
-          <a href="#projects" class="btn">See my work</a>
-          <a href="resume.pdf" class="btn btn-ghost" download>Download resume</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 class="hero-headline">
+          DESIGN <span class="plus">+</span><br/>
+          STRATEGY
+        </h1>
+
+        <p class="hero-lead">
+          I build reliable software and elegant systems — C++, NLP tools, and polished web apps with a focus on clarity and performance.
+        </p>
+
+        <div class="hero-actions">
+          <a class="cta primary" href="#projects">See projects</a>
+          <a class="cta ghost" href="resume.pdf" download>Download resume</a>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span class="chev">⌄</span>
         </div>
       </div>
 
-      <figure class="hero__avatar" aria-hidden="true">
-        <img src="avatar.jpg" alt="Portrait of Rayan Khan" />
+      <figure class="hero-visual" aria-hidden="true">
+        <img src="hero-image.jpg" alt="City skyline banner" />
       </figure>
     </div>
+  </div>
+</header>
 
-    <div class="hero__scroll-hint" aria-hidden="true">Scroll</div>
-  </header>
 
   <main id="main">
     <!-- SKILLS -->
