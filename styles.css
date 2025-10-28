@@ -26,19 +26,19 @@ body {
 /* --- Hero --- */
 .hero {
   position: relative;
-  min-height: 88vh;
+  min-height: auto;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
-  padding: 0 20px;
 }
 
 .hero-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
-  gap: 48px;
+  gap: 32px;
   max-width: var(--max);
   margin: 0 auto;
   width: 100%;
@@ -47,8 +47,8 @@ body {
 .hero-name-panel {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 20px;
+  gap: 8px;
+  padding: 0;
   border-left: 2px solid rgba(255,255,255,0.4);
   text-align: left;
   text-shadow: 0 0 8px rgba(255,255,255,0.7), 0 0 16px rgba(255,255,255,0.3);
@@ -76,11 +76,11 @@ body {
 .hero-visual {
   flex-shrink: 0;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   height: auto;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.5);
 }
 
 .hero-visual img {
@@ -129,11 +129,7 @@ body {
 }
 
 .nav-links { display: flex; }
-.nav-links li {
-  list-style: none;
-  margin-left: 24px;
-}
-
+.nav-links li { list-style: none; margin-left: 24px; }
 .nav-links li a {
   color: var(--text);
   text-decoration: none;
