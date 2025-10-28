@@ -1,50 +1,37 @@
-// helper
-const $ = s => document.querySelector(s);
-const $$ = s => Array.from(document.querySelectorAll(s));
+// Small hero reveal + gentle parallax for the image on scroll
+(function(){
+  const title = document.querySelector('.hero-headline');
+  const lead = document.querySelector('.hero-lead');
+  const img = document.querySelector('.hero-visual img');
+  const chev = document.querySelector('.chev');
 
-// PARALLAX for banner background
-(function () {
-  const bg = document.querySelector('.hero--banner .hero__bg');
-  if (!bg) return;
-  function onScroll() {
-    const y = window.scrollY;
-    // subtle parallax
-    bg.style.transform = `translateY(${y * 0.12}px) scale(1.02)`;
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-
-// HERO reveal (once)
-(function () {
-  const title = document.querySelector('.hero-title');
-  const sub = document.querySelector('.hero-sub');
-  if (!title) return;
-  setTimeout(() => {
-    title.classList.add('revealed');
-    sub.classList.add('revealed');
+  // headline reveal
+  setTimeout(()=> {
+    if(title) {
+      title.style.opacity = '1';
+      title.style.transform = 'translateY(0)';
+    }
+    if(lead) {
+      lead.style.opacity = '1';
+      lead.style.transform = 'translateY(0)';
+    }
   }, 140);
-})();
 
-// CARD reveal using IntersectionObserver
-(function () {
-  const cards = document.querySelectorAll('.card');
-  if (!cards.length) return;
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        el.style.opacity = 1;
-        el.style.transform = 'translateY(0)';
-        el.style.transition = 'all 0.8s cubic-bezier(.2,.9,.2,1)';
-        obs.unobserve(el);
-      }
-    });
-  }, { threshold: 0.15 });
+  // parallax (subtle)
+  if(img){
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      // move image slightly slower for parallax
+      img.style.transform = `translateY(${y * 0.03}px) scale(1.04)`;
+    }, { passive: true });
+  }
 
-  cards.forEach(c => {
-    c.style.opacity = 0;
-    c.style.transform = 'translateY(18px)';
-    obs.observe(c);
-  });
+  // animate chevron loop
+  if(chev){
+    let up = true;
+    setInterval(()=> {
+      chev.style.transform = up ? 'translateY(6px)' : 'translateY(0)';
+      up = !up;
+    }, 800);
+  }
 })();
