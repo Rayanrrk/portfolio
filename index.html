@@ -4,116 +4,69 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rayan Khan — Portfolio</title>
-  <meta name="description" content="Rayan Khan — Computer Science student. Portfolio: projects, skills, about, contact."/>
+  <meta name="description" content="Rayan Khan — Computer Science student portfolio with projects, skills, and contact information."/>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="sr-only" href="#main">Skip to content</a>
+  <header class="hero" id="home">
+    <div class="overlay"></div>
+    <nav class="site-nav">
+      <div class="logo">Rayan Khan</div>
+    </nav>
 
-  <!-- HERO -->
-  <header class="hero-dramatic" id="home" role="banner">
-    <div class="hero-inner">
-      <nav class="site-nav">
-        <div class="logo">Rayan Khan</div>
-        <button class="menu-btn" aria-label="Open menu">☰</button>
-      </nav>
-
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <h1 class="hero-headline">
-            CODE <span class="plus">+</span><br/>
-            CLARITY
-          </h1>
-
-          <p class="hero-lead">
-            I build clean, reliable, and high-performance software — blending design, logic, and precision in every project.
-          </p>
-
-          <div class="hero-actions">
-            <a class="cta white" href="#projects">See projects</a>
-            <a class="cta ghost" href="resume.pdf" download>Download resume</a>
-          </div>
-
-          <div class="scroll-hint" aria-hidden="true">
-            <span class="chev">⌄</span>
-          </div>
-        </div>
-
-        <figure class="hero-visual" aria-hidden="true">
-          <img src="hero-image.jpg" alt="City skyline banner" />
-        </figure>
+    <div class="hero-content fade-up">
+      <h1>Building <span>Clean & Intelligent</span> Experiences</h1>
+      <p>I design and develop reliable, elegant systems — from C++ projects to NLP tools and modern web apps.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="resume.pdf" class="btn outline" download>Resume</a>
       </div>
     </div>
   </header>
 
-  <main id="main">
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-list">
-          <span class="skill">C++</span>
-          <span class="skill">Python</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">NLP</span>
-          <span class="skill">OOP & Design Patterns</span>
-          <span class="skill">Git & Testing</span>
+  <main>
+    <section id="skills" class="section fade-up">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>C++</span><span>Python</span><span>JavaScript</span><span>NLP</span>
+        <span>Design Patterns</span><span>Git</span>
+      </div>
+    </section>
+
+    <section id="projects" class="section fade-up">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <h3>Machi Koro — C++</h3>
+          <p>Object-oriented card game implementing Strategy & Observer patterns.</p>
+        </div>
+        <div class="card">
+          <h3>NLP Text Analyzer</h3>
+          <p>Tokenization, n-grams, sentiment analysis, and document similarity.</p>
+        </div>
+        <div class="card">
+          <h3>Circular Motion Simulator</h3>
+          <p>Physics demo using Canvas to visualize circular motion.</p>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <div class="container">
-        <h2 class="section-title">Selected Projects</h2>
-        <div class="projects-grid">
-          <article class="card">
-            <h3>Machi Koro — C++</h3>
-            <p class="muted">OOP card game implementing Strategy & Observer patterns with unit-testable design.</p>
-            <div class="meta">C++ · OOP</div>
-          </article>
-
-          <article class="card">
-            <h3>NLP Text Analyzer</h3>
-            <p class="muted">Tokenization, n-grams, sentiment detection, and document similarity for coursework and labs.</p>
-            <div class="meta">Python · NLP</div>
-          </article>
-
-          <article class="card">
-            <h3>Circular Motion Simulator</h3>
-            <p class="muted">Interactive physics demo using HTML5 Canvas to visualize circular kinematics.</p>
-            <div class="meta">JavaScript · Canvas</div>
-          </article>
-        </div>
-      </div>
+    <section id="about" class="section fade-up">
+      <h2>About</h2>
+      <p>I’m a Computer Science student passionate about elegant design and efficient systems. I enjoy transforming academic concepts into real-world applications with clarity and performance in mind.</p>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container narrow">
-        <h2 class="section-title">About</h2>
-        <p>I’m a Computer Science student focused on building reliable systems and elegant, maintainable code. I enjoy turning coursework into polished projects and continually learning new tools. I’m looking for internships and projects in software engineering and NLP.</p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container narrow">
-        <h2 class="section-title">Contact</h2>
-        <p>Interested in working together? Reach me at:</p>
-        <p><a href="mailto:linkworkrayan@gmail.com" class="link">linkworkrayan@gmail.com</a></p>
-        <p class="muted">GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="link">github.com/yourusername</a></p>
-      </div>
+    <section id="contact" class="section fade-up">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:linkworkrayan@gmail.com">linkworkrayan@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <small>© <span id="year"></span> Rayan Khan • Built with clarity and care</small>
-    </div>
+  <footer>
+    <small>© <span id="year"></span> Rayan Khan • Built with HTML, CSS & JS</small>
   </footer>
 
   <script src="script.js" defer></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
