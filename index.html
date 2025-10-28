@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rayan Khan — Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayan Khan | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="fade-in">RAYAN <span class="highlight">Khan</span></h1>
-        <p class="tagline fade-in-delay">Building code with purpose.</p>
-        <a href="#projects" class="btn fade-in-delay">View My Work</a>
-      </div>
-      <div class="hero-image fade-in">
-        <img src="macbook-desk.jpg" alt="MacBook on desk with code on screen" />
-      </div>
-    </div>
-  </header>
+    <header>
+        <div class="container header-container">
+            <h1>Rayan Khan</h1>
+            <p>Computer Science Student | Car & Cybersecurity Enthusiast</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <section id="projects" class="section fade-in">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Machi Koro (C++)</h3>
-        <p>Object-oriented card game using Strategy & Observer design patterns.</p>
-      </div>
-      <div class="card">
-        <h3>NLP Text Analyzer</h3>
-        <p>Natural language processing toolkit for tokenization and sentiment analysis.</p>
-      </div>
-      <div class="card">
-        <h3>Circular Motion Simulator</h3>
-        <p>Interactive physics demo for kinematic motion using HTML5 Canvas.</p>
-      </div>
-    </div>
-  </section>
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I'm Rayan, a computer science student passionate about coding, cybersecurity, and cars. I enjoy building projects that merge technology and real-world applications.</p>
+        </div>
+    </section>
 
-  <section id="contact" class="section fade-in">
-    <h2>Contact</h2>
-    <p>Let’s connect — reach me at:</p>
-    <p><a href="mailto:linkworkrayan@gmail.com">linkworkrayan@gmail.com</a></p>
-  </section>
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>A brief description of your project here.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>A brief description of your project here.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 3</h3>
+                    <p>A brief description of your project here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <small>© <span id="year"></span> Rayan Khan — Built with purpose.</small>
-  </footer>
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <form id="contactForm">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rayan Khan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
