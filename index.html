@@ -14,7 +14,6 @@
   <header class="hero" id="home" role="banner">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-overlay" aria-hidden="true"></div>
-    <canvas class="particle-canvas" aria-hidden="true"></canvas>
 
     <nav class="nav">
       <div class="logo">Rayan Khan</div>
@@ -27,6 +26,7 @@
     </nav>
 
     <div class="hero-inner">
+      <!-- Hero Copy -->
       <div class="hero-copy">
         <h1 class="title">CODE <span class="plus">+</span> CLARITY</h1>
         <p class="subtitle">I build reliable, maintainable software — C++, NLP, and polished web apps. Clean code. Clear thinking.</p>
@@ -34,6 +34,12 @@
           <a class="btn btn-white" href="#projects">See projects</a>
           <a class="btn btn-ghost" href="resume.pdf" download>Download résumé</a>
         </div>
+      </div>
+
+      <!-- Futuristic Name Panel -->
+      <div class="hero-name-panel">
+        <h1 class="name-futuristic">Rayan Khan</h1>
+        <p class="subtitle-futuristic">Computer Science Student</p>
       </div>
 
       <figure class="hero-visual" aria-hidden="true">
@@ -46,12 +52,14 @@
 
   <!-- MAIN -->
   <main id="main">
-    <!-- PROJECTS -->
+    <!-- PROJECTS / SHOWCASE CAROUSEL -->
     <section id="projects" class="panel">
       <div class="container">
         <h2>Featured Projects</h2>
+
         <div class="carousel-wrap">
           <button id="prev" class="ctrl" aria-label="Previous project">‹</button>
+
           <div id="carousel" class="carousel" role="region" aria-roledescription="carousel" aria-label="Featured projects">
             <article class="tile active" data-title="Machi Koro">
               <img src="showcase-1-1600.jpg" alt="Machi Koro screenshot" loading="lazy">
@@ -83,6 +91,7 @@
               </div>
             </article>
           </div>
+
           <button id="next" class="ctrl" aria-label="Next project">›</button>
         </div>
       </div>
