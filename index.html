@@ -14,6 +14,7 @@
   <header class="hero" id="home" role="banner">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-overlay" aria-hidden="true"></div>
+    <canvas class="particle-canvas" aria-hidden="true"></canvas>
 
     <nav class="nav">
       <div class="logo">Rayan Khan</div>
@@ -36,7 +37,6 @@
       </div>
 
       <figure class="hero-visual" aria-hidden="true">
-        <!-- optional: drop hero-image.jpg into folder; if missing the bg still works -->
         <img src="hero-image.jpg" alt="Hero visual" loading="lazy">
       </figure>
     </div>
@@ -46,14 +46,12 @@
 
   <!-- MAIN -->
   <main id="main">
-    <!-- PROJECTS / SHOWCASE CAROUSEL -->
+    <!-- PROJECTS -->
     <section id="projects" class="panel">
       <div class="container">
         <h2>Featured Projects</h2>
-
         <div class="carousel-wrap">
           <button id="prev" class="ctrl" aria-label="Previous project">‹</button>
-
           <div id="carousel" class="carousel" role="region" aria-roledescription="carousel" aria-label="Featured projects">
             <article class="tile active" data-title="Machi Koro">
               <img src="showcase-1-1600.jpg" alt="Machi Koro screenshot" loading="lazy">
@@ -85,7 +83,6 @@
               </div>
             </article>
           </div>
-
           <button id="next" class="ctrl" aria-label="Next project">›</button>
         </div>
       </div>
