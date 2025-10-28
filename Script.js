@@ -1,33 +1,16 @@
-// Parallax & reveals for Template A
-document.getElementById('year')?.textContent = new Date().getFullYear();
-
-// parallax background
+// Simple carousel for Template B
 (function(){
-  const bg = document.querySelector('.hero-bg');
-  if (!bg) return;
-  const onScroll = () => {
-    const y = window.scrollY;
-    bg.style.transform = `translateY(${y * 0.08}px) scale(1.02)`;
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
+  const tiles = Array.from(document.querySelectorAll('.tile'));
+  let i = 0;
+  function show(index){
+    tiles.forEach((t,idx)=> t.classList.toggle('active', idx===index));
+  }
+  document.getElementById('next').addEventListener('click', ()=> { i = (i+1)%tiles.length; show(i); });
+  document.getElementById('prev').addEventListener('click', ()=> { i = (i-1+tiles.length)%tiles.length; show(i); });
 
-// hero entrance
-(function(){
-  const title = document.querySelector('.title');
-  const lead = document.querySelector('.lead');
-  setTimeout(()=> { if(title){ title.style.opacity = 1; title.style.transform='translateY(0)';} }, 140);
-  setTimeout(()=> { if(lead){ lead.style.opacity = 1; lead.style.transform='translateY(0)'; } }, 320);
-})();
+  // auto-rotate every 6s
+  setInterval(()=> { i=(i+1)%tiles.length; show(i); }, 6000);
 
-// reveal sections
-(function(){
-  const items = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries, o)=> {
-    entries.forEach(e=> {
-      if(e.isIntersecting){ e.target.classList.add('in-view'); o.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  items.forEach(i=> obs.observe(i));
+  // initial
+  show(0);
 })();
