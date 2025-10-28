@@ -5,7 +5,7 @@
   --panel-soft: #212125;
   --muted: #9aa0a6;
   --text: #eef0f1;
-  --accent: #58a6ff;
+  --accent: #eaeaea; /* changed accent to white-ash */
   --glass: rgba(255,255,255,0.03);
   --trans: cubic-bezier(.2,.9,.25,1);
   --max: 1200px;
@@ -57,10 +57,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* keeps name on the left */
+  align-items: flex-start; /* keep left-aligned */
   gap: 12px;
   padding: 20px;
-  border-left: 2px solid rgba(88,166,255,0.4);
+  border-left: 2px solid rgba(255,255,255,0.4); /* white border */
   text-shadow: 0 0 8px rgba(255,255,255,0.7), 0 0 16px rgba(255,255,255,0.3);
   opacity: 0;
   animation: fadeIn 1.5s forwards;
@@ -72,12 +72,13 @@ body {
   font-weight: 900;
   color: #eaeaea; /* white-ash */
   text-shadow: 0 0 8px #fff, 0 0 16px rgba(255,255,255,0.2);
+  animation: glowPulse 2.5s infinite alternate;
 }
 
 .subtitle-futuristic {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--accent);
+  color: #eaeaea; /* white-ash */
   opacity: 0.85;
   white-space: nowrap;
   overflow: hidden;
@@ -105,10 +106,14 @@ body {
 /* --- Animations --- */
 @keyframes typing { from { width: 0; } to { width: 100%; } }
 @keyframes flicker {
-  0%,19%,21%,23%,25%,54%,56%,100% { opacity: 0.85; text-shadow: 0 0 4px rgba(88,166,255,0.5), 0 0 12px rgba(88,166,255,0.3); }
-  20%,24%,55% { opacity: 1; text-shadow: 0 0 12px rgba(88,166,255,1), 0 0 36px rgba(88,166,255,0.6); }
+  0%,19%,21%,23%,25%,54%,56%,100% { opacity: 0.85; text-shadow: 0 0 4px rgba(255,255,255,0.5), 0 0 12px rgba(255,255,255,0.3); }
+  20%,24%,55% { opacity: 1; text-shadow: 0 0 12px #fff, 0 0 36px rgba(255,255,255,0.6); }
 }
 @keyframes fadeIn { to { opacity: 1; } }
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 8px #fff, 0 0 16px rgba(255,255,255,0.2); }
+  100% { text-shadow: 0 0 20px #fff, 0 0 40px rgba(255,255,255,0.4); }
+}
 
 /* --- Panels --- */
 .panel {
@@ -157,15 +162,15 @@ body {
 }
 
 .nav-links li a:hover {
-  color: #58a6ff;
-  text-shadow: 0 0 8px #58a6ff, 0 0 16px rgba(88,166,255,0.4);
+  color: #eaeaea; /* hover white */
+  text-shadow: 0 0 8px #fff, 0 0 16px rgba(255,255,255,0.4);
 }
 
 .logo {
   font-weight: 900;
   font-size: 1.5rem;
-  color: #58a6ff;
-  text-shadow: 0 0 12px #58a6ff, 0 0 24px rgba(88,166,255,0.3);
+  color: #eaeaea; /* white logo */
+  text-shadow: 0 0 12px #fff, 0 0 24px rgba(255,255,255,0.3);
   transition: transform 0.3s;
 }
 .logo:hover {
