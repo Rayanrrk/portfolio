@@ -1,50 +1,187 @@
-/* --- Hero Name Changes --- */
+/* --- Root & Fonts --- */
+:root {
+  --bg: #141416;
+  --panel: #1c1c1e;
+  --panel-soft: #212125;
+  --muted: #9aa0a6;
+  --text: #eef0f1;
+  --accent: #58a6ff;
+  --glass: rgba(255,255,255,0.03);
+  --trans: cubic-bezier(.2,.9,.25,1);
+  --max: 1200px;
+  font-family: 'Inter', -apple-system, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* --- Reset --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  padding: 64px 28px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max);
+  display: grid;
+  grid-template-columns: 1fr 48%;
+  gap: 28px;
+  align-items: center;
+}
+
+/* --- Hero Name Panel --- */
+.hero-name-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  border-left: 2px solid rgba(88,166,255,0.4);
+  text-shadow: 0 0 8px rgba(88,166,255,0.7), 0 0 24px rgba(88,166,255,0.3);
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+/* Name styles */
 .name-futuristic {
-    font-size: clamp(48px, 7vw, 96px);
-    font-weight: 900;
-    color: #fff; /* Changed from blue gradient to white */
-    text-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 24px rgba(255,255,255,0.3);
-    background: none;
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: unset;
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 900;
+  color: #58a6ff;
+  text-shadow: 0 0 8px #58a6ff, 0 0 24px rgba(88,166,255,0.3);
+  animation: glowPulse 2.5s infinite alternate;
 }
 
-/* --- Sidebar futuristic redesign --- */
-.futuristic-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    background: rgba(255,255,255,0.03);
-    border-left: 2px solid rgba(255,255,255,0.2);
-    padding: 20px 14px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    font-weight: 600;
-    letter-spacing: 1px;
-    transform: translateY(0);
-    transition: all 0.3s ease;
+.subtitle-futuristic {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 2.5s steps(25) forwards, flicker 1.5s infinite alternate;
 }
 
-.futuristic-sidebar li a {
-    color: #fff;
-    text-decoration: none;
-    position: relative;
+/* --- Hero Visual --- */
+.hero-visual {
+  width: 100%;
+  height: 60vh;
+  min-height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
-.futuristic-sidebar li a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: #fff;
-    transition: width 0.3s ease;
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.futuristic-sidebar li a:hover::after {
-    width: 100%;
+/* --- Animations --- */
+@keyframes typing { from { width: 0; } to { width: 100%; } }
+@keyframes flicker {
+  0%,19%,21%,23%,25%,54%,56%,100% { opacity: 0.85; text-shadow: 0 0 4px rgba(88,166,255,0.5), 0 0 12px rgba(88,166,255,0.3); }
+  20%,24%,55% { opacity: 1; text-shadow: 0 0 12px rgba(88,166,255,1), 0 0 36px rgba(88,166,255,0.6); }
+}
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 8px #58a6ff, 0 0 24px rgba(88,166,255,0.3); }
+  100% { text-shadow: 0 0 20px #58a6ff, 0 0 40px rgba(88,166,255,0.5); }
 }
 
-/* --- Remove Skip link --- */
-/* (No code needed in HTML, already removed) */
+/* --- Panels --- */
+.panel {
+  max-width: var(--max);
+  margin: 40px auto;
+  padding: 28px;
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+/* --- Carousel & Tiles --- */
+.carousel-wrap { display: flex; align-items: center; gap: 14px; position: relative; }
+.carousel { width: 100%; display: flex; gap: 18px; align-items: stretch; overflow: visible; }
+.tile { flex: 0 0 60%; background: var(--panel); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.45); display: flex; flex-direction: column; }
+.tile img { width: 100%; height: 340px; object-fit: cover; background: #111; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.tile-body { padding: 18px; }
+
+/* --- Pills --- */
+.pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.pills span { background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 999px; color: var(--muted); font-weight: 600; }
+
+/* --- Footer --- */
+.footer { padding: 28px 14px; text-align: center; color: var(--muted); }
+
+/* --- Navigation (Futuristic) --- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-links li {
+  list-style: none;
+  margin-left: 24px;
+  position: relative;
+}
+
+.nav-links li a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #58a6ff;
+  text-shadow: 0 0 8px #58a6ff, 0 0 16px rgba(88,166,255,0.4);
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #58a6ff;
+  text-shadow: 0 0 12px #58a6ff, 0 0 24px rgba(88,166,255,0.3);
+  transition: transform 0.3s;
+}
+.logo:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* --- Responsive --- */
+@media(max-width:1000px){
+  .hero-inner { grid-template-columns: 1fr; }
+  .tile { flex: 0 0 100%; }
+  .hero-visual { height: 44vh; min-height: 220px; }
+  .hero-name-panel { align-items: center; border-left: none; text-align: center; gap: 6px; }
+  .subtitle-futuristic { border-right: none; }
+}
