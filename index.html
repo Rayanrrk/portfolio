@@ -1,15 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rayan Khan — Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Rayan Khan — Computer Science student. Projects: C++, NLP, JavaScript."/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay"></div>
-    <nav class="navbar">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- HERO -->
+  <header class="hero" id="home" role="banner">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <nav class="nav">
       <div class="logo">Rayan Khan</div>
       <ul class="nav-links">
         <li><a href="#projects">Projects</a></li>
@@ -19,71 +25,104 @@
       </ul>
     </nav>
 
-    <div class="hero-content">
-      <h1 class="fade-in">Hi, I’m <span>Rayan Khan</span></h1>
-      <p class="fade-in delay">Computer Science student passionate about building elegant, high-performance software.</p>
-      <div class="cta-buttons fade-in delay-2">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="resume.pdf" download class="btn secondary">Download Resume</a>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 class="title">CODE <span class="plus">+</span> CLARITY</h1>
+        <p class="subtitle">I build reliable, maintainable software — C++, NLP, and polished web apps. Clean code. Clear thinking.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-white" href="#projects">See projects</a>
+          <a class="btn btn-ghost" href="resume.pdf" download>Download résumé</a>
+        </div>
       </div>
+
+      <figure class="hero-visual" aria-hidden="true">
+        <!-- optional: drop hero-image.jpg into folder; if missing the bg still works -->
+        <img src="hero-image.jpg" alt="Hero visual" loading="lazy">
+      </figure>
     </div>
+
+    <div class="chev" aria-hidden="true">⌄</div>
   </header>
 
-  <main>
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="section">
-      <h2>Featured Projects</h2>
-      <div class="carousel">
-        <button class="arrow left">←</button>
-        <div class="projects-container">
-          <div class="project-card active">
-            <h3>Machi Koro — C++</h3>
-            <p>OOP card game implementing Strategy & Observer patterns with testable design.</p>
-            <span class="tag">C++ · OOP</span>
+  <!-- MAIN -->
+  <main id="main">
+    <!-- PROJECTS / SHOWCASE CAROUSEL -->
+    <section id="projects" class="panel">
+      <div class="container">
+        <h2>Featured Projects</h2>
+
+        <div class="carousel-wrap">
+          <button id="prev" class="ctrl" aria-label="Previous project">‹</button>
+
+          <div id="carousel" class="carousel" role="region" aria-roledescription="carousel" aria-label="Featured projects">
+            <article class="tile active" data-title="Machi Koro">
+              <img src="showcase-1-1600.jpg" alt="Machi Koro screenshot" loading="lazy">
+              <div class="tile-body">
+                <h3>Machi Koro — C++</h3>
+                <p class="muted">Modular OOP implementation using Strategy & Observer patterns. Focus: testable logic and maintainable design.</p>
+                <div class="meta">C++ · OOP · Unit tests</div>
+                <p><a class="project-link" href="https://github.com/yourusername/machi-koro" target="_blank" rel="noopener">View on GitHub →</a></p>
+              </div>
+            </article>
+
+            <article class="tile" data-title="NLP Text Analyzer">
+              <img src="showcase-2-1600.jpg" alt="NLP Text Analyzer UI" loading="lazy">
+              <div class="tile-body">
+                <h3>NLP Text Analyzer</h3>
+                <p class="muted">Tokenization, n-grams, sentiment scoring & document similarity — lightweight and extensible.</p>
+                <div class="meta">Python · NLP</div>
+                <p><a class="project-link" href="https://github.com/yourusername/nlp-text-analyzer" target="_blank" rel="noopener">View on GitHub →</a></p>
+              </div>
+            </article>
+
+            <article class="tile" data-title="Circular Motion Simulator">
+              <img src="showcase-3-1600.jpg" alt="Circular Motion Simulator" loading="lazy">
+              <div class="tile-body">
+                <h3>Circular Motion Simulator</h3>
+                <p class="muted">Interactive Canvas demo visualizing kinematics — great for teaching and demos.</p>
+                <div class="meta">JavaScript · Canvas</div>
+                <p><a class="project-link" href="https://github.com/yourusername/circular-motion-sim" target="_blank" rel="noopener">View on GitHub →</a></p>
+              </div>
+            </article>
           </div>
 
-          <div class="project-card">
-            <h3>NLP Text Analyzer</h3>
-            <p>Tokenization, n-grams, sentiment detection, and document similarity for coursework.</p>
-            <span class="tag">Python · NLP</span>
-          </div>
-
-          <div class="project-card">
-            <h3>Physics Visualizer</h3>
-            <p>Interactive HTML5 Canvas demo to visualize circular motion and forces.</p>
-            <span class="tag">JavaScript · Canvas</span>
-          </div>
+          <button id="next" class="ctrl" aria-label="Next project">›</button>
         </div>
-        <button class="arrow right">→</button>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section light">
-      <h2>Skills</h2>
-      <div class="skills-list">
-        <span>C++</span><span>Python</span><span>JavaScript</span>
-        <span>React</span><span>OOP</span><span>NLP</span><span>Git</span>
+    <section id="skills" class="panel panel--soft">
+      <div class="container narrow">
+        <h2>Skills</h2>
+        <div class="pills">
+          <span>C++</span><span>Python</span><span>JavaScript</span><span>NLP</span><span>OOP</span><span>Git</span>
+        </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>I’m a passionate Computer Science student who loves to design elegant, efficient software. 
-      My projects focus on performance, readability, and real-world application.</p>
+    <section id="about" class="panel">
+      <div class="container narrow">
+        <h2>About</h2>
+        <p>I’m a Computer Science student who values clarity and pragmatic design. I enjoy turning course work into polished projects and learning tools that scale.</p>
+      </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section light">
-      <h2>Contact</h2>
-      <p>Want to connect? Reach me at:</p>
-      <a href="mailto:linkworkrayan@gmail.com" class="email">linkworkrayan@gmail.com</a>
+    <section id="contact" class="panel panel--soft">
+      <div class="container narrow">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:linkworkrayan@gmail.com">linkworkrayan@gmail.com</a></p>
+        <p class="muted">GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Rayan Khan • Built with HTML, CSS & JS</p>
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> Rayan Khan</small>
+    </div>
   </footer>
 
   <script src="script.js"></script>
