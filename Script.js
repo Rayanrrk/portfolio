@@ -1,39 +1,25 @@
-// Simple carousel and small interactions for Template B
-document.getElementById('year')?.textContent = new Date().getFullYear();
+// Year auto-update
+document.getElementById('year').textContent = new Date().getFullYear();
 
-(function(){
-  const tiles = Array.from(document.querySelectorAll('.tile'));
-  const prev = document.getElementById('prev');
-  const next = document.getElementById('next');
-  let i = 0;
-  const total = tiles.length;
+// Carousel logic
+const cards = document.querySelectorAll('.project-card');
+const left = document.querySelector('.arrow.left');
+const right = document.querySelector('.arrow.right');
+let index = 0;
 
-  function show(index){
-    tiles.forEach((t, idx) => t.classList.toggle('active', idx === index));
-    // update aria-live title for assistive tech (optional)
-    const title = tiles[index]?.dataset?.title;
-    if(title) document.title = `${title} — Rayan Khan`;
-  }
-
-  function nextSlide(){ i = (i + 1) % total; show(i); }
-  function prevSlide(){ i = (i - 1 + total) % total; show(i); }
-
-  if(next) next.addEventListener('click', nextSlide);
-  if(prev) prev.addEventListener('click', prevSlide);
-
-  // keyboard navigation (left/right)
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') nextSlide();
-    if (e.key === 'ArrowLeft') prevSlide();
+function showProject(i) {
+  cards.forEach((card, idx) => {
+    card.classList.remove('active');
+    if (idx === i) card.classList.add('active');
   });
+}
 
-  // auto rotate, pause on hover
-  let timer = setInterval(nextSlide, 6000);
-  const carousel = document.getElementById('carousel');
-  if(carousel){
-    carousel.addEventListener('mouseenter', () => clearInterval(timer));
-    carousel.addEventListener('mouseleave', () => timer = setInterval(nextSlide, 6000));
-  }
+left.addEventListener('click', () => {
+  index = (index - 1 + cards.length) % cards.length;
+  showProject(index);
+});
 
-  show(0);
-})();
+right.addEventListener('click', () => {
+  index = (index + 1) % cards.length;
+  showProject(index);
+});
